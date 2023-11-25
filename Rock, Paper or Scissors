@@ -1,0 +1,59 @@
+const getUserChoice = userInput => {
+    userInput = userInput.toLowerCase();
+    return userInput === 'rock' ||
+      userInput === 'paper' ||
+      userInput === 'scissors'
+      ? userInput
+      : 'error';
+  };
+  
+  const getComputerChoice = () => {
+    randomNumber = Math.floor(Math.random() * 3);
+    switch (randomNumber) {
+      case 0:
+        return 'rock';
+        break;
+      case 1:
+        return 'paper';
+        break;
+      case 2:
+        return 'scissors';
+        break;
+    }
+  };
+  
+  const determineWinner = (getUserChoice, getComputerChoice) => {
+    if (getComputerChoice === getUserChoice) {
+      return 'its a tie';
+    } else if (getUserChoice === 'rock') {
+      if (getComputerChoice === 'paper') {
+        return 'computer won';
+      } else {
+        return 'you won';
+      }
+    } else if (getUserChoice === 'paper') {
+      if (getComputerChoice === 'scissors') {
+        return 'computer won';
+      } else {
+        return 'you won';
+      }
+    } else if (getUserChoice === 'scissors') {
+      if (getComputerChoice === 'rock') {
+        return 'computer won';
+      } else {
+        return 'you won';
+      }
+    }
+  };
+  
+  const playGame = () => {
+    const userChoice = prompt("write rock, paper or scissors");
+    const computerChoise = getComputerChoice();
+    const winner = determineWinner(userChoice, computerChoise);
+    console.log(`You choose: ${userChoice}\n`);
+    console.log(`Computer: ${computerChoise}\n`);
+    console.log(`Result: ${winner}`);
+  };
+  
+  playGame();
+  
