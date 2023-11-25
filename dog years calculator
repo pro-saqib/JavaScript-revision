@@ -1,0 +1,15 @@
+const myAge = 25
+// my age
+let earlyYears = 2
+// early 2 years
+earlyYears*=10.5
+// calculating dog age for early 2 years
+laterYears = myAge-2
+// excluded 2 years from myAge
+laterYears*=4
+// calculating dog age for later years
+let myAgeInDogYears = earlyYears+laterYears
+// calculating my total age for a dogs life
+let myName="John".toLowerCase()
+// my myName in Lower Case
+console.log(`My name is ${myName} \nI am ${myAge} years old in human years which is ${myAgeInDogYears} old in dog years`)
