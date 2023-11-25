@@ -56,7 +56,9 @@ function square(n) {
   return n * n;
 }
 
-// This code runs without any error, despite the square() function being called before it's declared. This is because the JavaScript interpreter hoists the entire function declaration to the top of the current scope, so the code above is equivalent to:
+// This code runs without any error, despite the square() function being called before it's declared. 
+// JavaScript interpreter hoists the entire function declaration to the 
+//top of the current scope, so the code above is equivalent to:
 
 // All function declarations are effectively at the top of the scope
 function square(n) {
@@ -64,3 +66,29 @@ function square(n) {
 }
 
 console.log(square(5)); // 25
+
+
+// Closure | JavaScript feature in which the inner function has access to the outer function variable.
+
+function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, that forms the closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+
+
+// Currying | returning enclosed function immidiately  
+function sum(a) {
+  return function (b) {
+    return function (c) {
+      return a+b+c
+    }
+  }
+}
+
+let ans = sum(4)(5)(8)
+console.log(ans) // 17
