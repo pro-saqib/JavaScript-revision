@@ -1,0 +1,65 @@
+function getSleepHours(day){
+  let weekDay = day.toLowerCase();
+  switch(weekDay){
+    case 'monday':
+    return 8
+    break
+    case 'tuesday':
+    return 7
+    break
+    case 'wednesday':
+    return 6
+    break
+    case 'thursday':
+    return 5
+    break
+    case 'friday':
+    return 7
+    break
+    case 'saturday':
+    return 6
+    break
+    case 'sunday':
+    return 8
+    break
+  }
+}
+function getActualSleepHours(){
+  let monday= getSleepHours('monday')
+  let tuesday=getSleepHours('tuesday')
+  let wednesday=getSleepHours('wednesday')
+  let thursday=getSleepHours('thursday')
+  let friday= getSleepHours('friday')
+  let saturday=getSleepHours('saturday')
+  let sunday=getSleepHours('sunday')
+
+  let sum=monday+tuesday+wednesday+thursday+friday+saturday+sunday
+
+  return sum
+}
+console.log(`Your actual sleep hours last week ${getActualSleepHours()}\n`)
+
+function getidealSleepHours(){
+  const idealHours=8
+  return idealHours*7
+}
+console.log(`Your ideal sleep hours ${getidealSleepHours()}\n`)
+
+function calculateSleepDept(){
+  const ActualSleepHours = getActualSleepHours()
+  const idealSleepHours = getidealSleepHours()
+
+  if(ActualSleepHours === idealSleepHours){
+    console.log('You got perfect amount of sleep')
+  }
+  else if(ActualSleepHours > idealSleepHours){
+    let overSleep=ActualSleepHours-idealSleepHours
+    console.log(`You got more sleep than needed. About ${overSleep} hours of extra sleep.`)
+  }
+    else if(ActualSleepHours < idealSleepHours){
+      let underSleep=idealSleepHours-ActualSleepHours
+    console.log(`You should get some rest. You're ${underSleep} hours behind ideal hours.`)
+  }
+}
+
+calculateSleepDept()
