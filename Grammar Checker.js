@@ -21,3 +21,20 @@ let badWord = "freaking";
 storyWords = storyWords.map((word) => {
   return word === misspelledWord ? 'beautiful' : word;
 });
+
+badWordIndex = storyWords.findIndex((word)=>{
+  return word === badWord
+})
+// console.log(badWordIndex)
+// storyWords[78]='really'
+// console.log(storyWords[78])
+
+lengthCheck = storyWords.every((word)=>{
+  return word.length <= 10
+})
+// console.log(lengthCheck)
+
+storyWords = storyWords.map((word) => {
+  return word.length >= 10 ? 'dazzling' : word;
+});
+console.log(storyWords.join(' '))
