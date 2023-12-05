@@ -1,6 +1,3 @@
-
-
-
 // numberDigits()
 
 const numberDigit = x => {
