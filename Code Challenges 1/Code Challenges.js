@@ -1,8 +1,4 @@
-// greetWorld()
-function greetWorld(){
-    return 'Hello, World!'
-  }
-  console.log(greetWorld())
+
   
   //canIVote()
   const canIVote = age => {
