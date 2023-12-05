@@ -1,0 +1,9 @@
+function greetAliens(arr){
+  arr.forEach((word)=>{
+    console.log(`Oh powerful ${word}, we humans offer our unconditional surrender!`)
+  })
+}
+
+const aliens = ["Blorgous", "Glamyx", "Wegord", "SpaceKing"];
+
+greetAliens(aliens);
